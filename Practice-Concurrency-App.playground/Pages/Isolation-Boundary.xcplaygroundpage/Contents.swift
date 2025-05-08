@@ -1,5 +1,11 @@
 import Foundation
 
+/* コンパイルエラーを回避できる
+final class Box: @unchecked Sendable {
+    var value: Int = 0
+}
+ */
+
 final class Box {
     var value: Int = 0
 }

@@ -5,7 +5,7 @@
 **※ 復習し、理解度が深められるよう、学習用のコメントアウトを多く記述しています。**
 
 ## 今やっていること/今後やること
-**[TCA GitHub Examples CaseStudies](https://github.com/pointfreeco/swift-composable-architecture/tree/main/Examples/CaseStudies/SwiftUICaseStudies)** にて、TCA の様々な利用シーンごとの実装例が豊富に用意されているため、それらを参考に、現サンプルアプリの機能の改修・追加等を行い、TCA のキャッチアップを行う。
+**[視聴時間:1時間 Xcode 16 & Swift 6 キャッチアップ: Swift Concurrencyの基礎と最重要ポイントを総復習](https://www.youtube.com/watch?v=jJgEtjx8KHY&t=3966s)** を2回程視聴し、Concurrency の基礎をざっくりと理解。
 
 その後は、**[ライブコーディング Swift 6とStrictConcurrencyで困らないiOSアプリの作り方](https://www.youtube.com/watch?v=lu0Ge0td1Kg&t=906s)** を参考に、Concurrency を用いたより実践的なサンプルアプリを作成予定
 

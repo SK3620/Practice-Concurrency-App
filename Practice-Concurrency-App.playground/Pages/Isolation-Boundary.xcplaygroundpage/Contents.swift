@@ -24,7 +24,18 @@ func run1() async {
     //  A の Isolation Domain に Box を渡そうしている
     // すなわち、Box は A の Isolation Boundary を越えようとしている
     // しかし、Box は Sendable でないため、コンパイルエラー発生！
+    // そもそも Box は class で class は Sendable に準拠していない（しない方が良い？）
+    
+    /* // コンパイルエラー
     await a.setBox(box) // Non-Sendable なデータが Isolation Boundary を越えようとしているよ！
+     */
+    
+    // 値を読み込む
+    print(box.value)
+    
+    /*
+     仮に、actor A の isolation Domain の setBox(){} の中で box の値を書き換えるような処理をしている場合、且つ、外側から print(box.value) のように、値を読み込んでいる場合、それらは並行に行われ、データ競合が起きる可能性があるとして、コンパイルエラーを出してくれる
+     */
 }
 
 func run2() {

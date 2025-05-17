@@ -92,7 +92,7 @@ Task.detached(operation: { () -> Void in
     print(await score2.highScore)
 })
 // どちらも100になる場合や、110になる場合がなくなり
-// 必ず、100, 110が順不同で出力される（データ競合がなくなる）
+// 必ず、100, 110になる（データ競合がなくなる）
 
 // update()もudpate2()もasyncキーワードがないが、外からアクセスする場合は必ずawaitをつける！（asyncのように扱う）
 

@@ -27,3 +27,20 @@ Task {
 // よって、コンパイルが通る
 
 
+let serialQueue = DispatchQueue(label: "com.example.serial", target: .global())
+
+serialQueue.async {
+    
+    print(Thread.isMainThread)
+
+    print("Task 1")
+
+}
+
+serialQueue.async {
+    
+    print(Thread.isMainThread)
+
+    print("Task 2")
+
+}

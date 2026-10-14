@@ -16,7 +16,6 @@ Task {
     MainActor.assertIsolated()
     box.value = -1
 }
-
 Task {
     // MainActor
     MainActor.assertIsolated()
@@ -44,3 +43,5 @@ serialQueue.async {
     print("Task 2")
 
 }
+
+// 2026.10.14 復習済み

@@ -49,8 +49,13 @@ func run1() async {
     
     let f: () -> Void = {}
     
-    // await a.useF(f) // Sending 'f' risks causing data races
+    await a.useF(f) // Sending 'f' risks causing data races
     f() // さらにここでも f を呼び出すことができてしまう
+    
+    /**
+     すなわち、await a.useF で f のクロージャが実行されるし、run1()で 直接 f のクロージャも実行できてしまうので、並行アクセスの危険性があると、swiftが事前検知。
+     そもそも、f関数はSendableではないため、IsorationBoudaryを超えられない
+     */
 }
 
 await run1()
@@ -85,8 +90,8 @@ func run3() async {
     }
     
     /*
-     Sendable にしてみる
-     すると、f2 は 外の actor に渡せてしまうが、
+     @Sendable にしてみる
+     すると、f2 は 外の actor に渡せてしまう。例えば、「await a.useF(f)」のように。そうすると、Sendableじゃないboxが別のActorをまたごうとしてしまう。
      その渡されてしまう f2 の クロージャ中身には、Sendable でない box をキャプチャしてしまっている
      よって 外の actor 内で実行されて、同時にアクセスされてしまう可能性がある
      なので、コンパイルエラー

@@ -40,5 +40,10 @@ run()
  ・Non-isolated（Taskもインスタンスごとに Task 独自の Isolation Domain を持っている？）それって「Isolated to an actor value」？
  ・Isolated to an actor value（クラスのインスタンスごとに作られるActor）
  ・Isolated to a global actor（MainActorが代表的）
+ 
+→ TaskのインスタンスごとにIsolationDomianが存在すると考えて良い
+ Isolation Domain == Consurrency Domian と考えて問題なし
+ 
+ 2026/10/15 復習済み
  */
 

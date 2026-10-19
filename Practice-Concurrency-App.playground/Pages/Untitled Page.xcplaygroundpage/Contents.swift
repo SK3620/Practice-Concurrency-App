@@ -38,6 +38,7 @@ struct UserListView: View {
     }
 }
 
+// @MainActorがいらない？？
 @MainActor @Observable
 final class UserListViewState {
     private(set) var users: [User] = []

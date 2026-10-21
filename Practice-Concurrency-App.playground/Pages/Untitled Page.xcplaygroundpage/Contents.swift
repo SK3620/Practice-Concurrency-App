@@ -159,6 +159,12 @@ enum Practice {
                 
                 // 正しい書き方（MainActorのコンテキストを維持したまま実行）
                 await state.load()
+                
+                /**
+                 Task.detachedはTask.initと異なり、TaskやActorの実行コンテキスト（MainActor, classごとのインスタンスActor）を継承しない。
+                 Task.detachedの使い所としては、@MainActorからバックグラウンドスレッドに処理をディスパッチしたい場合など、あえてActor isolationを断ち切りたいケース
+                 detachedの意味は切り離す。
+                 */
             }
         }
     }
